@@ -1,0 +1,98 @@
+*{
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.content {
+    display: flex;
+    background: black;
+    width: var(--size);
+    height: var(--size);
+    font-size: var(--font-size);
+
+}
+
+.content:hover{
+    animation: zoomInOut 0.5s 2 alternate forwards, showResume 1s 1s forwards;
+    cursor: pointer;
+
+   
+}
+
+.letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: var(--size);
+    min-height: var(--size);
+    color: white;
+   
+}
+
+.wordComplete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--size);
+    height: var(--size);
+    color: white;
+   
+}
+
+.resume {
+    display: none;
+    align-items: center;
+   
+   
+ 
+}
+.zoomFx {
+    animation: zoomInOut 0.5s 2 alternate forwards;
+    cursor: pointer;
+}
+
+.showResume {
+    animation: showResume 1s forwards;
+    animation-delay: 1s;
+    cursor: pointer;
+}
+
+.hideResume{
+    animation: hideResume 1s forwards;
+}
+
+
+@keyframes zoomInOut{
+    from{
+        transform: scale(1);
+        border-radius: 0%;
+    }to {
+        transform: scale(1.2);
+        border-radius: 50% / 5%;
+    }
+
+}
+
+@keyframes showResume {
+    from{
+        width: var(--size);
+    }to{
+        width: var(--collapse);
+    }
+}
+
+@keyframes hideResume {
+    from{
+        width: var(--collapse);
+    }to{
+        width: var(--size);
+    }
+}
+
